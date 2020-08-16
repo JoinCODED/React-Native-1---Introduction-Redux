@@ -6,15 +6,31 @@ I miss styled components already! Can we use them with React Native components? 
    $ yarn add styled-components
    ```
 
-2. In the `Home` folder, create a `styles.js` file.
+2. Import `ThemeProvider` in `App.js`.
 
-3. Import `styled` from `styled-components/native`.
+    ```javascript
+    import { ThemeProvider } from "styled-components";
+    ```
+
+3. Copy your `theme` object from your React app.
+
+4. Wrap your `Home` component with the `ThemeProvider` and pass it the light or dark theme.
+
+    ```javascript
+    <ThemeProvider theme={theme.light}>
+      <Home />
+    </ThemeProvider>
+    ```
+
+5. In the `Home` folder, create a `styles.js` file.
+
+6. Import `styled` from `styled-components/native`.
 
    ```javascript
    import styled from "styled-components/native";
    ```
 
-4. Let's create a styled component for our `ImageBackground`, `View` and `Text` and move our styling.
+7. Let's create a styled component for our `ImageBackground`, `View` and `Text` and move our styling.
 
    ```javascript
    export const HomeBackground = styled.ImageBackground`
@@ -36,7 +52,7 @@ I miss styled components already! Can we use them with React Native components? 
    `;
    ```
 
-5. Let's import them in `index.js` and use them.
+8. Let's import them in `index.js` and use them.
 
    ```javascript
    return (
@@ -53,7 +69,7 @@ I miss styled components already! Can we use them with React Native components? 
    );
    ```
 
-6. I want to add a colored but transparent layer on top of the image. Let's create a styled component of type `View`. We'll give it a `flex` and `backgroundColor`.
+9. I want to add a colored but transparent layer on top of the image. Let's create a styled component of type `View`. We'll give it a `flex` and `backgroundColor`.
 
    ```javascript
    export const OverLayContainer = styled.View`
@@ -62,7 +78,7 @@ I miss styled components already! Can we use them with React Native components? 
    `;
    ```
 
-7. Render it right under the `HomeBackground`
+10. Render it right under the `HomeBackground`
 
    ```javascript
    <ContainerStyled
@@ -75,7 +91,7 @@ I miss styled components already! Can we use them with React Native components? 
    </ContainerStyled>
    ```
 
-8. Let's add a button that we can click on later to take us to the list of bakeries. In `styles`, create the following styled components.
+11. Let's add a button that we can click on later to take us to the list of bakeries. In `styles`, create the following styled components.
 
    ```javascript
    export const BottomStyling = styled.View`
@@ -90,7 +106,7 @@ I miss styled components already! Can we use them with React Native components? 
    `;
    ```
 
-9. Import and render them in `index.js` under the closing tag of `TopStyling`
+11. Import and render them in `index.js` under the closing tag of `TopStyling`
 
    ```javascript
     <TopStyling>
@@ -101,7 +117,7 @@ I miss styled components already! Can we use them with React Native components? 
     </BottomStyling>
    ```
 
-10. Let's give it an alert for now when we click on it.
+11. Let's give it an alert for now when we click on it.
 
     ```javascript
     <ButtonStyled onClick={() => alert("Take me to the list of bakeries")}>
@@ -111,7 +127,7 @@ I miss styled components already! Can we use them with React Native components? 
 
     Let's try it out. Oops, nothing happened. That's because in a phone application we don't **click** on the screen, we **press** it.
 
-11. Change `onClick` to `onPress`.
+12. Change `onClick` to `onPress`.
 
     ```javascript
     <ButtonStyled onPress={() => alert("Take me to the list of bakeries")}>

@@ -44,7 +44,7 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 
    ```javascript
    export const BakeryItemStyled = styled.Text`
-     color: #6c788e;
+     color: ${(props) => props.theme.mainColor};
      font-size: 18;
      margin-top: 10;
      margin-bottom: 10;
