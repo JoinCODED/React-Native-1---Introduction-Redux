@@ -81,14 +81,14 @@ I miss styled components already! Can we use them with React Native components? 
 10. Render it right under the `HomeBackground`
 
    ```javascript
-   <ContainerStyled
+   <HomeBackground
      source={{
        uri:
          "https://annabanana.co/wp-content/uploads/2020/03/Chocolate-Chip-Cookies-22.jpg",
      }}
    >
      <OverLayContainer>[...]</OverLayContainer>
-   </ContainerStyled>
+   </HomeBackground>
    ```
 
 11. Let's add a button that we can click on later to take us to the list of bakeries. In `styles`, create the following styled components.
