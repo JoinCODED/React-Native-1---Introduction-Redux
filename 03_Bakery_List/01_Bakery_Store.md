@@ -2,13 +2,13 @@ Let's start with setting up our bakery store.
 
 1. Install `mobx`, `mobx-react` and `axios`.
 
-    ```shell
-    $ yarn add mobx mobx-react axios
-    ```
+   ```shell
+   $ yarn add mobx mobx-react axios
+   ```
 
 2. Create a folder called `stores`.
 
-3. Create a file called `bakeryStore.js`
+3. Create a file called `bakeryStore.js`.
 
 4. There's no need to create a store from scratch. Copy the one from your ReactJS web app.
 

@@ -4,33 +4,33 @@
 
 3. In `index.js`, map over `cookies` in `cookieStore` and pass every `cookie` to `CookieItem`.
 
-    ```javascript
-    const cookieList = cookieStore.cookies.map(
-        (cookie) => (<CookieItem cookie={cookie} key={cookie.id} />)
-    );
-    ```
+   ```javascript
+   const cookieList = cookieStore.cookies.map((cookie) => (
+     <CookieItem cookie={cookie} key={cookie.id} />
+   ));
+   ```
 
 4. Render `cookieList` in a `List` component within a `Content` component.
-   
-    ```javascript
-    return (
-        <Content>
-            <List>{cookieList}</List>
-        </Content>
-    );
-    ```
 
-5. In `Cookie`, let's render the name of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` from `BakeryList/styles` and render `cookie.name`.
+   ```javascript
+   return (
+     <Content>
+       <List>{cookieList}</List>
+     </Content>
+   );
+   ```
 
-    ```javascript
-    import React from "react";
-    import { BakeryItemStyled } from "../BakeryList/styles";
+5. In `CookieItem`, let's render the name of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` from `BakeryList/styles` and render `cookie.name`.
 
-    const CookieItem = ({ cookie }) => {
-        return <BakeryItemStyled>{cookie.name}</BakeryItemStyled>;
-    };
+   ```javascript
+   import React from "react";
+   import { BakeryItemStyled } from "../BakeryList/styles";
 
-    export default CookieItem;
-    ```
+   const CookieItem = ({ cookie }) => {
+     return <BakeryItemStyled>{cookie.name}</BakeryItemStyled>;
+   };
+
+   export default CookieItem;
+   ```
 
 6. Temporarily in `App.js`, comment out `BakeryList` and render `CookieList`.

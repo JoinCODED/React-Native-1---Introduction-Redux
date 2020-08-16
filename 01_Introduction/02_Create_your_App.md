@@ -1,19 +1,18 @@
 1. Inside your `Development` directory, create your first `React Native` project:
 
-    ```shell
-    $ expo-cli init cookie-shop
-    ```
+   ```shell
+   $ expo-cli init cookie-shop
+   ```
 
 2. You can choose a blank project or a template, for now we will choose an empty template as shown below:
 
-![Template](https://imgur.com/QxfTEfH.png)
+   ![Template](https://imgur.com/QxfTEfH.png)
 
+   By default, expo will use yarn to install all the files.
 
-    By default, expo will use yarn to install all the files.
+   ![Use Yarn](https://i.imgur.com/NgiyOwq.png)
 
-![Use Yarn](https://i.imgur.com/NgiyOwq.png)
-
-Your application is now ready! 
+Your application is now ready!
 
 3. As you can see `expo` is telling you how to run the application.
 
