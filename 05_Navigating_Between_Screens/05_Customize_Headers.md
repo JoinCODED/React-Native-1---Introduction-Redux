@@ -1,4 +1,5 @@
-1. At this point, the header's title is the screen's name. Bt how can we give it a different name? We will pass `Screen` another `prop` called `options` which takes an object, where we can change the title.
+1. At this point, the header's title is the screen's name. But how can we give it a different name? We will pass `Screen` another `prop` called `options` which takes an object, where we can change the title.
+
    ```jsx
    <Screen
      name="Bakeries"
@@ -58,3 +59,5 @@
      }}
    >
    ```
+
+   This becomes the default header for all screens. Any customization on the `Screen` component level will override this `Navigator`-level header customization.
