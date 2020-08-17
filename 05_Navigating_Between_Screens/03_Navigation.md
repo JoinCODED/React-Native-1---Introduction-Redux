@@ -5,15 +5,14 @@
 3. In `Home.js`, receive `{navigation}` as a `prop`.
 
    ```jsx
-   const Home = ({navigation}) => {
+   const Home = ({ navigation }) => {
    ```
-
 
 4. Replace the `alert` in the `onPress` to navigate to the List Screen:
 
    ```jsx
    <ButtonStyled onPress={() => navigation.navigate()}>
-    Click here to skip
+     Click here to skip
    </ButtonStyled>
    ```
 
@@ -21,16 +20,16 @@
 
    ```jsx
    <ButtonStyled onPress={() => navigation.navigate("Bakeries")}>
-    Click here to skip
+     Click here to skip
    </ButtonStyled>
    ```
 
    Note that the navigation is animated, it affects the header by adding a back button which actually works, and you can go back using gestures! The magic of React Navigation!!!
 
-6. Now whenever we press on a bakery, we want to go to the list of cookies. So let's add an `onPress` to our `ListItem` in `CookieItem`.
+6. Now whenever we press on a bakery, we want to go to the list of cookies. So let's add an `onPress` to our `ListItem` in `BakeryItem`.
 
    ```jsx
-   const CookieItem = ({ bakery, navigation }) => {
+   const BakeryItem = ({ bakery, navigation }) => {
      return (
        <ListItem onPress={() => navigation.navigate("Cookies")}>
          <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
@@ -39,14 +38,14 @@
    };
    ```
 
-7. Oops. We got an error... Navigation won't work in `CookieItem.js`. It is not part of the stack, thus it does not have access to `props.navigation`. In `CookieList.js`, pass `navigation` as a `prop` to `CookieItem`.
+7. Oops. We got an error... Navigation won't work in `BakeryItem.js`. It is not part of the stack, thus it does not have access to `props.navigation`. In `BakeryList.js`, pass `navigation` as a `prop` to `BakeryItem`.
 
    ```jsx
-   const bakeryList = bakeryStore.bakeries.map((bakery) => (
-    <BakeryItem 
-      bakery={bakery} 
-      key={bakery.id} 
-      navigation={navigation} 
-    />
-   ));
+   const BakeryList = ({ navigation }) => {
+     [...]
+     const bakeryList = bakeryStore.bakeries.map((bakery) => (
+       <BakeryItem bakery={bakery} key={bakery.id} navigation={navigation} />
+     ));
+     [...]
+   };
    ```
