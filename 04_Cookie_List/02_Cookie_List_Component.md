@@ -20,16 +20,21 @@
    );
    ```
 
-5. In `CookieItem`, let's render the name of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` and render `cookie.name`.
+5. In `CookieItem`, let's render the name and the image of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` and render them.
 
    ```javascript
    import React from "react";
    import { BakeryItemStyled } from "../styles";
    import { ListItem } from "native-base";
+   import { Image } from "react-native";
 
    const CookieItem = ({ cookie }) => {
      return (
        <ListItem>
+         <Image
+           style={{ width: 100, height: 100 }}
+           source={{ uri: cookie.image }}
+         />
          <BakeryItemStyled>{cookie.name}</BakeryItemStyled>
        </ListItem>
      );
