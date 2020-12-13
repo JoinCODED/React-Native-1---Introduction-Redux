@@ -53,8 +53,25 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 
 8. Wow! This looks much better!
 
-9. Another cool component from Native Base is the `Spinner`. Import it in `BakeryList` and render it instead of `Loading...`.
+9. Let's also display the image of each bakery using react native's `Image` component.
 
    ```javascript
-   if (bakeryStore.loading) return <Spinner />;
+   import { Image } from "react-native";
+   const BakeryItem = ({ bakery }) => {
+     return (
+       <ListItem>
+         <Image
+           style={{ width: 100, height: 100 }}
+           source={{ uri: bakery.image }}
+         />
+         <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
+       </ListItem>
+     );
+   };
    ```
+
+10. Another cool component from Native Base is the `Spinner`. Import it in `BakeryList` and render it instead of `Loading...`.
+
+    ```javascript
+    if (bakeryStore.loading) return <Spinner />;
+    ```
