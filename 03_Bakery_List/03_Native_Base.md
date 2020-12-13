@@ -42,7 +42,7 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 
 7. Let's style the `Text` a bit. In your `styles.js` file, import `styled` and create a new styled component for `Text`, and use it in `BakeryItem`.
 
-   ```javascript
+   ```
    export const BakeryItemStyled = styled.Text`
      color: ${(props) => props.theme.mainColor};
      font-size: 18;

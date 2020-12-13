@@ -25,9 +25,14 @@
    ```javascript
    import React from "react";
    import { BakeryItemStyled } from "../styles";
+   import { ListItem } from "native-base";
 
    const CookieItem = ({ cookie }) => {
-     return <BakeryItemStyled>{cookie.name}</BakeryItemStyled>;
+     return (
+       <ListItem>
+         <BakeryItemStyled>{cookie.name}</BakeryItemStyled>
+       </ListItem>
+     );
    };
 
    export default CookieItem;
