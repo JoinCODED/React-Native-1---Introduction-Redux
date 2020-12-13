@@ -1,4 +1,4 @@
-1. In `components` create a folder called `CookieList`, inside it create an `index.js` file and setup your component.
+1. In `components` create a file called `CookieList.js` and setup your component.
 
 2. Also create a `CookieItem.js` file and setup your component.
 
@@ -20,11 +20,11 @@
    );
    ```
 
-5. In `CookieItem`, let's render the name of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` from `BakeryList/styles` and render `cookie.name`.
+5. In `CookieItem`, let's render the name of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` and render `cookie.name`.
 
    ```javascript
    import React from "react";
-   import { BakeryItemStyled } from "../BakeryList/styles";
+   import { BakeryItemStyled } from "../styles";
 
    const CookieItem = ({ cookie }) => {
      return <BakeryItemStyled>{cookie.name}</BakeryItemStyled>;

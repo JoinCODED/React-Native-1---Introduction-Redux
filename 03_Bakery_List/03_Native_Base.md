@@ -40,7 +40,7 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 
 6. Note that you can scroll through it now.
 
-7. Let's style the `Text` a bit. Create a `styles.js` file, import `styled` and create a new styled component for `Text`, and use it in `BakeryItem`.
+7. Let's style the `Text` a bit. In your `styles.js` file, import `styled` and create a new styled component for `Text`, and use it in `BakeryItem`.
 
    ```javascript
    export const BakeryItemStyled = styled.Text`
