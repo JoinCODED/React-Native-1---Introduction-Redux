@@ -48,6 +48,7 @@ The styling is horrible! We need to fix the styling for our list to show. This s
      font-size: 18;
      margin-top: 10;
      margin-bottom: 10;
+     width: 100%;
    `;
    ```
 
