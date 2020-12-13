@@ -12,8 +12,6 @@ Let's start with setting up our bakery store.
 
 4. There's no need to create a store from scratch. Copy the one from your ReactJS web app.
 
-5. Now what are the methods that we need? We're not gonna create, update or delete any bakeries here. So remove all those methods. We only need the `fetchBakeries` method.
+5. We'll need both `bakeries` and `loading` so keep them.
 
-6. We'll need both `bakeries` and `loading` so keep them.
-
-7. Copy the `instance.js` file as well from your ReactJS web app.
+6. Copy the `instance.js` file as well from your ReactJS web app.

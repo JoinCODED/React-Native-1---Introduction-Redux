@@ -1,8 +1,8 @@
-1. In `components` create a folder called `BakeryList`, inside it create an `index.js` file and setup your component.
+1. In `components` create a file called `BakeryList.js` and setup your component.
 
 2. Also create a `BakeryItem.js` file and setup your component.
 
-3. In `index.js`, map over `bakeries` in `bakeryStore` and pass every `bakery` to `BakeryItem`.
+3. In `BakeryList.js`, map over `bakeries` in `bakeryStore` and pass every `bakery` to `BakeryItem`.
 
    ```javascript
    const bakeryList = bakeryStore.bakeries.map((bakery) => (

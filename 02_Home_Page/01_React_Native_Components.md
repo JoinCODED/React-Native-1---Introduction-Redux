@@ -6,7 +6,7 @@ Let's create our `Home` component and try out some of those components.
 
 1. Create a new folder called `components`.
 
-2. Create a folder inside `components` called `Home`, inside it create an `index.js` file and setup up your component.
+2. Create a file inside `components` called `Home.js` and setup up your component.
 
 3. Let's start with the `ImageBackground` component. Import it from `react-native` and render it.
 
@@ -71,7 +71,7 @@ Let's create our `Home` component and try out some of those components.
    </ImageBackground>
    ```
 
-7. Lastly, import and render the `Home` component from your `App.js`.
+7. Lastly, import and render the `Home` component in your `App.js`.
 
    ```javascript
    // Components
