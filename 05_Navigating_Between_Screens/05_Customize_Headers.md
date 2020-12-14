@@ -2,7 +2,7 @@
 
    ```jsx
    <Screen
-     name="Bakeries"
+     name="BakeryList"
      component={BakeryList}
      options={{ title: "Choose a Bakery" }}
    />
@@ -28,12 +28,12 @@
    <Screen name="Home" component={Home} options={{ headerShown: false }} />
    ```
 
-3. Now for `CookieList` we want the header title to be dynamic. It should be the bakery's name. So to access the bakery name, we will pass `options` a function, this function takes `props` as an argument. We will destruct it to access `route`, then we will pass the `name` of the `bakery` saved in `route.params` to `title` as a return value.
+3. Now for `Bakery Detail` we want the header title to be dynamic. It should be the bakery's name. So to access the bakery name, we will pass `options` a function, this function takes `props` as an argument. We will destruct it to access `route`, then we will pass the `name` of the `bakery` saved in `route.params` to `title` as a return value.
 
    ```jsx
    <Screen
-     name="Cookies"
-     component={CookieList}
+     name="BakeryDetail"
+     component={BakeryDetail}
      options={({ route }) => {
        const { bakery } = route.params;
        return {

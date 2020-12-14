@@ -19,7 +19,7 @@
 5. But what will we pass to `navigate`? The `name` of the screen we want to navigate to. Keep in mind that it has to be a string.
 
    ```jsx
-   <ButtonStyled onPress={() => navigation.navigate("Bakeries")}>
+   <ButtonStyled onPress={() => navigation.navigate("BakeryList")}>
      Click here to skip
    </ButtonStyled>
    ```
@@ -31,7 +31,7 @@
    ```jsx
    const BakeryItem = ({ bakery, navigation }) => {
      return (
-       <ListItem onPress={() => navigation.navigate("Cookies")}>
+       <ListItem onPress={() => navigation.navigate("BakeryDetail")}>
          <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
        </ListItem>
      );

@@ -69,8 +69,8 @@
        <NavigationContainer>
          <Navigator>
            <Screen name="Home" component={Home} />
-           <Screen name="Bakeries" component={BakeryList} />
-           <Screen name="Cookies" component={CookieList} />
+           <Screen name="BakeryList" component={BakeryList} />
+           <Screen name="BakeryDetail" component={BakeryDetail} />
          </Navigator>
        </NavigationContainer>
      );
