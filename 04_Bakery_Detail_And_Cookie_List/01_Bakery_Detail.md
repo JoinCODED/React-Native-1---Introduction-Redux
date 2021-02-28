@@ -6,17 +6,17 @@ Let's create a bakery detail page.
 
    ```javascript
    export const BakeryDetailWrapper = styled.View`
-     margin-top: 50;
+     margin-top: 50px;
    `;
 
    export const BakeryDetailImage = styled.Image`
-     width: 150;
-     height: 150;
+     width: 150px;
+     height: 150px;
    `;
 
    export const BakeryDetailTitle = styled.Text`
      font-weight: bold;
-     font-size: 40;
+     font-size: 40px;
    `;
    ```
 

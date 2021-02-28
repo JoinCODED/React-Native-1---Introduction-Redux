@@ -64,7 +64,7 @@ Let's create our `Home` component and try out some of those components.
      <View
        style={{ height: "40%", alignItems: "center", justifyContent: "center" }}
      >
-       <Text style={{ color: "#fff", fontSize: 38, textAlign: "center" }}>
+       <Text style={{ color: "#fff", fontSize: "38px", textAlign: "center" }}>
          Cookies & Beyond
        </Text>
      </View>

@@ -45,10 +45,10 @@ The styling is horrible! We need to fix the styling for our list to show. This s
    ```
    export const BakeryItemStyled = styled.Text`
      color: ${(props) => props.theme.mainColor};
-     font-size: 18;
-     margin-top: 10;
-     margin-bottom: 10;
-     margin-left: 16;
+     font-size: 18px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     margin-left: 16px;
      width: 100%;
    `;
    ```

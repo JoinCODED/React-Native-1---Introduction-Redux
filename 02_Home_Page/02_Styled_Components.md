@@ -47,7 +47,7 @@ I miss styled components already! Can we use them with React Native components? 
 
    export const Title = styled.Text`
      color: #fff;
-     font-size: 38;
+     font-size: 38px;
      text-align: center;
    `;
    ```
@@ -101,7 +101,7 @@ export const BottomStyling = styled.View`
 `;
 
 export const ButtonStyled = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   color: #fff;
 `;
 ```
