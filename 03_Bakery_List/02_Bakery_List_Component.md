@@ -2,21 +2,27 @@
 
 2. Also create a `BakeryItem.js` file and setup your component.
 
-3. In `BakeryList.js`, map over `bakeries` in `bakeryStore` and pass every `bakery` to `BakeryItem`.
+3. In `BakeryList.js`, import `useSelector` and fetch all `bakeries` from the bakery reducer.
 
    ```javascript
-   const bakeryList = bakeryStore.bakeries.map((bakery) => (
+   const bakeries = useSelector((state) => state.bakeryReducer.bakeries);
+   ```
+
+4. Map over `bakeries` and pass every `bakery` to `BakeryItem`.
+
+   ```javascript
+   const bakeryList = bakeries.map((bakery) => (
      <BakeryItem bakery={bakery} key={bakery.id} />
    ));
    ```
 
-4. Render `bakeryList` in a `View` component.
+5. Render `bakeryList` in a `View` component.
 
    ```javascript
    return <View>{bakeryList}</View>;
    ```
 
-5. For now in `BakeryItem`, let's just render the name of the `bakery`. Pass `bakery` as a `prop`, import `Text` from `react-native` and render `bakery.name`.
+6. For now in `BakeryItem`, let's just render the name of the `bakery`. Pass `bakery` as a `prop`, import `Text` from `react-native` and render `bakery.name`.
 
    ```javascript
    import React from "react";
@@ -29,16 +35,16 @@
    export default BakeryItem;
    ```
 
-6. Temporarily in `App.js`, comment out `Home` and render `BakeryList`.
+7. Temporarily in `App.js`, comment out `Home` and render `BakeryList`.
 
-7. Note that the items are not always showing, let's add an `observer` to `BakeryList`.
+8. Also let's add the `loading` condition here. Fetch `loading` from the `shopReducer`.
 
    ```javascript
-   export default observer(BakeryList);
+   const loading = useSelector((state) => state.bakeryReducer.loading);
    ```
 
-8. Also let's add the `loading` condition here. If `loading` is true, render a `Text` saying `Loading...`.
+9. If `loading` is true, render a `Text` saying `Loading...`.
 
    ```javascript
-   if (bakeryStore.loading) return <Text>Loading...</Text>;
+   if (loading) return <Text>Loading...</Text>;
    ```

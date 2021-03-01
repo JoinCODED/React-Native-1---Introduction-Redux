@@ -1,6 +1,6 @@
 Let's create a bakery detail page.
 
-1. In your `components/` folder, create `BakeryDetai.js` and setup your component.
+1. In your `components/` folder, create `BakeryDetail.js` and setup your component.
 
 2. In Bakery Detail, we'll start by displaying the bakery's name and image. Create these styled components in your `styles.js` for the detail page:
 
@@ -32,7 +32,7 @@ Let's create a bakery detail page.
    } from "../styles";
 
    const BakeryDetail = () => {
-     const bakery = bakeryStore.bakeries[0];
+     const bakery = useSelector((state) => state.bakeryReducer.bakeries[0]);
      return (
        <BakeryDetailWrapper>
          <BakeryDetailImage source={{ uri: bakery.image }} />
@@ -46,14 +46,13 @@ Let's create a bakery detail page.
 
 4. In your `App`, comment the `BakeryList` and render `BakeryDetail` instead.
 
-5. Oh no's! It breaks! This is because the store is still requesting the bakeries from the backend, so we need to make our detail component into an observer and put an if-statement.
+5. Oops! It's breaking.. This is because the store is still requesting the bakeries from the backend, so we need to make our detail component into an observer and put an if-statement.
 
    ```javascript
-   import { observer } from "mobx-react";
-
    const BakeryDetail = () => {
-     const bakery = bakeryStore.bakeries[0];
-     if (bakeryStore.loading) return <Spinner />;
+     const loading = useSelector((state) => state.bakeryReducer.loading);
+     const bakery = useSelector((state) => state.bakeryReducer.bakeries[0]);
+     if (loading) return <Spinner />;
      return (
        <BakeryDetailWrapper>
          <BakeryDetailImage source={{ uri: bakery.image }} />
@@ -62,5 +61,5 @@ Let's create a bakery detail page.
      );
    };
 
-   export default observer(BakeryDetail);
+   export default BakeryDetail;
    ```

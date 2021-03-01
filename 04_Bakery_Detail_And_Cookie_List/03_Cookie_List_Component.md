@@ -45,15 +45,15 @@
    export default CookieItem;
    ```
 
-6. In your `BakeryDetail`, import `cookieStore` to get the bakery's cookies from the `cookieStore`, and pass them to `CookieList`.
+6. In your `BakeryDetail`, import `useSelector` to get the bakery's cookies from the cookie reducer, and pass them to `CookieList`.
 
    ```javascript
-   import cookieStore from "../stores/cookieStore";
    const BakeryDetail = () => {
      [...]
+     const cookies = useSelector((state) => state.cookieReducer.cookies);
 
      const cookiesFromCookieStore = bakery.cookies.map((cookie) =>
-       cookieStore.getCookieById(cookie.id)
+       cookies.find(_cookie => (cookie.id === _cookie.id))
      );
 
      return (

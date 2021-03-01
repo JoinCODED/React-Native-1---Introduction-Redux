@@ -5,9 +5,3 @@ This setup is done one time only.
    ```shell
    $ yarn global add expo-cli
    ```
-
-2. Install `react-devtools` globally.
-
-   ```shell
-   $ yarn global add react-devtools
-   ```

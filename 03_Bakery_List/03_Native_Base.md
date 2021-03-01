@@ -63,7 +63,7 @@ The styling is horrible! We need to fix the styling for our list to show. This s
      return (
        <ListItem>
          <Image
-           style={{ width: 100, height: 100 }}
+           style={{ width: "100px", height: "100px" }}
            source={{ uri: bakery.image }}
          />
          <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
@@ -75,5 +75,5 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 10. Another cool component from Native Base is the `Spinner`. Import it in `BakeryList` and render it instead of `Loading...`.
 
     ```javascript
-    if (bakeryStore.loading) return <Spinner />;
+    if (loading) return <Spinner />;
     ```
