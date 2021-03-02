@@ -4,18 +4,18 @@ There's a lot going on in `App.js`, so let's refactor the whole stack navigator 
 
 2. We will call the component `RootNavigator`. Setup your component.
 
-    ```javascript
-    const RootNavigator = () => { }
-    ```
+   ```javascript
+   const RootNavigator = () => {};
+   ```
 
 3. Move the `Navigator` component and everything inside it to `index.js`. Don't forget to move all the imports.
 
 4. Import `RootNavigator` in `App.js` and render it under `NavigationContainer`.
-   
-    ```javascript
-    <ThemeProvider theme={theme.light}>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
-    </ThemeProvider>
-    ```
+
+   ```javascript
+   <Provider store={store}>
+     <NavigationContainer>
+       <RootNavigator />
+     </NavigationContainer>
+   </Provider>
+   ```

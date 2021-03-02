@@ -21,9 +21,11 @@ We need to install a few dependencies to use [React Navigation](https://reactnav
 
    export default function App() {
     return (
-      <NavigationContainer>
+      <Provider store={store}>
+       <NavigationContainer>
         <Home />
-      </NavigationContainer>
+       </NavigationContainer>
+      </Provider>
     );
    }
    ```

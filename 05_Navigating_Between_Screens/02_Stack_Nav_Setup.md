@@ -34,11 +34,13 @@
    ```javascript
    export default function App() {
      return (
-       <NavigationContainer>
-         <Navigator>
-           <Home />
-         </Navigator>
-       </NavigationContainer>
+       <Provider store={store}>
+         <NavigationContainer>
+           <Navigator>
+             <Home />
+           </Navigator>
+         </NavigationContainer>
+       </Provider>
      );
    }
    ```
