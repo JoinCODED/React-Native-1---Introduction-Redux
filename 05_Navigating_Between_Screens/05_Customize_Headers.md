@@ -4,7 +4,7 @@
    <Screen
      name="BakeryList"
      component={BakeryList}
-     options={{ title: "Choose a Bakery" }}
+     options={{ title: 'Choose a Bakery' }}
    />
    ```
 
@@ -16,7 +16,7 @@
      component={Home}
      options={{
        headerStyle: {
-         backgroundColor: "#ffd1dc",
+         backgroundColor: '#ffd1dc',
        },
      }}
    />

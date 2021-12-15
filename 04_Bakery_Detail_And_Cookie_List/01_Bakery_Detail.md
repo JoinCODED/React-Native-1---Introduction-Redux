@@ -2,42 +2,34 @@ Let's create a bakery detail page.
 
 1. In your `components/` folder, create `BakeryDetail.js` and setup your component.
 
-2. In Bakery Detail, we'll start by displaying the bakery's name and image. Create these styled components in your `styles.js` for the detail page:
+2. In Bakery Detail, we'll start by displaying the shop's name and image. Create these styles in your StyleSheet for the detail page:
 
-   ```javascript
-   export const BakeryDetailWrapper = styled.View`
-     margin-top: 50px;
-   `;
-
-   export const BakeryDetailImage = styled.Image`
-     width: 150px;
-     height: 150px;
-   `;
-
-   export const BakeryDetailTitle = styled.Text`
-     font-weight: bold;
-     font-size: 40px;
-   `;
-   ```
+```javascript
+const styles = StyleSheet.create({
+  BakeryDetailWrapper: {
+    marginTop: 50,
+  },
+  BakeryDetailImage: {
+    width: 150,
+    height: 150,
+  },
+  BakeryDetailTitle: {
+    fontWeight: 'bold',
+    fontSize: 40,
+  },
+});
+```
 
 3. Render them in your detail component. For now, display only the first bakery in your bakeryStore.
 
    ```javascript
-   import React from "react";
-   import bakeryStore from "../stores/bakeryStore";
-   import {
-     BakeryDetailTitle,
-     BakeryDetailImage,
-     BakeryDetailWrapper,
-   } from "../styles";
-
    const BakeryDetail = () => {
      const bakery = useSelector((state) => state.bakeryReducer.bakeries[0]);
      return (
-       <BakeryDetailWrapper>
-         <BakeryDetailImage source={{ uri: bakery.image }} />
-         <BakeryDetailTitle>{bakery.name}</BakeryDetailTitle>
-       </BakeryDetailWrapper>
+       <View style={styles.shopDetailWrapper}>
+         <Image style={styles.shopDetailImage} source={{ uri: bakery.image }} />
+         <Text style={styles.shopDetailTitle}>{bakery.name}</Text>
+       </View>
      );
    };
 
@@ -54,10 +46,13 @@ Let's create a bakery detail page.
      const bakery = useSelector((state) => state.bakeryReducer.bakeries[0]);
      if (loading) return <Spinner />;
      return (
-       <BakeryDetailWrapper>
-         <BakeryDetailImage source={{ uri: bakery.image }} />
-         <BakeryDetailTitle>{bakery.name}</BakeryDetailTitle>
-       </BakeryDetailWrapper>
+       <View style={styles.BakeryDetailWrapper}>
+         <Image
+           style={styles.BakeryDetailImage}
+           source={{ uri: bakery.image }}
+         />
+         <Text style={styles.BakeryDetailTitle}>{bakery.name}</Text>
+       </View>
      );
    };
 

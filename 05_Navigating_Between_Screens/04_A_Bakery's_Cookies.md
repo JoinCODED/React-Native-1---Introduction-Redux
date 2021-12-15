@@ -5,11 +5,9 @@ What we need to do is pass the bakery object to `BakeryDetail`.
 1. In `BakeryItem` we will pass `navigate` another argument which is an object, the key is the name of your route param and the value is whatever you want to pass.
 
    ```javascript
-   <ListItem
+   <Pressable
      onPress={() => navigation.navigate("BakeryDetail", { bakery: bakery })}
    >
-     <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
-   </ListItem>
    ```
 
    How can we receive it in `CookieList`? Let's check `props` again in RN Debugger, you'll see that its saved in `route.params`.
@@ -19,7 +17,6 @@ What we need to do is pass the bakery object to `BakeryDetail`.
    ```javascript
    const BakeryDetail = ({ navigation, route }) => {
     const { bakery } = route.params;
-    if (bakeryStore.loading) return <Text>Loading...</Text>;
     [...]
    }
    ```

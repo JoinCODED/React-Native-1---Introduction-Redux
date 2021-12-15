@@ -8,35 +8,73 @@
    const Home = ({ navigation }) => {
    ```
 
-4. Replace the `alert` in the `onPress` to navigate to the List Screen:
+4. Add a button that will navigate you to the list of shops when pressing on it. Don't forget to style your button.
 
    ```jsx
-   <ButtonStyled onPress={() => navigation.navigate()}>
-     Click here to skip
-   </ButtonStyled>
+   <Button style={styles.button} title="Click here"></Button>
    ```
 
 5. But what will we pass to `navigate`? The `name` of the screen we want to navigate to. Keep in mind that it has to be a string.
 
    ```jsx
-   <ButtonStyled onPress={() => navigation.navigate("BakeryList")}>
-     Click here to skip
-   </ButtonStyled>
+   <Button
+     onPress={() => navigation.navigate('BakeryList')}
+     style={styles.button}
+     title="Click here"
+   ></Button>
    ```
 
    Note that the navigation is animated, it affects the header by adding a back button which actually works, and you can go back using gestures! The magic of React Navigation!!!
 
-6. Now whenever we press on a bakery, we want to go to the list of cookies. So let's add an `onPress` to our `ListItem` in `BakeryItem`.
+6. Now whenever we press on a bakery, we want to go to the list of cookies. So let's add an `onPress` to our `BakeryItem`.
 
    ```jsx
    const BakeryItem = ({ bakery, navigation }) => {
-     return (
-       <ListItem onPress={() => navigation.navigate("BakeryDetail")}>
-         <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
-       </ListItem>
-     );
-   };
+   return (
+   <HStack
+   onPress={() => navigation.navigate("BakeryDetail")}
+   w="100%"
+   alignItems="center"
+   space="3"
+   >
+   <Image
+     source={{
+       uri: bakery.image,
+     }}
+     alt="image"
+     style={{ width: 100, height: 100 }}
+   />
+   <Text>{bakery.name}</Text>
+   </HStack>
+   })
    ```
+
+7. Still not working..., the problem is that `HStack` component from `native-base` is not pressable, to solve this, import `Pressable` component from `native-base` and wrap your `HStack` with it.
+
+```javascript
+import { HStack, Image, Pressable } from 'native-base';
+
+const BakeryItem = ({ bakery, navigation }) => {
+  return (
+    <Pressable
+      onPress={() => {
+        navigation.navigate('BakeryDetail');
+      }}
+    >
+      <HStack w="100%" alignItems="center" space="3">
+        <Image
+          source={{
+            uri: bakery.image,
+          }}
+          alt="image"
+          style={{ width: 100, height: 100 }}
+        />
+        <Text>{bakery.name}</Text>
+      </HStack>
+    </Pressable>
+  );
+};
+```
 
 7. Oops. We got an error... Navigation won't work in `BakeryItem.js`. It is not part of the stack, thus it does not have access to `props.navigation`. In `BakeryList.js`, pass `navigation` as a `prop` to `BakeryItem`.
 

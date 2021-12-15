@@ -8,9 +8,9 @@
 
    ![Template](https://imgur.com/QxfTEfH.png)
 
-   By default, expo will use yarn to install all the files.
+   By default, expo will use npm to install all the files.
 
-   ![Use Yarn](https://i.imgur.com/NgiyOwq.png)
+   ![Use Npm](https://i.imgur.com/NgiyOwq.png)
 
 Your application is now ready!
 

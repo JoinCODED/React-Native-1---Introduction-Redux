@@ -12,33 +12,32 @@
    };
    ```
 
-4. Render `cookieList` in a `List` component within a `Content` component.
+4. Render `cookieList` in a `VStack` component.
 
    ```javascript
-   return (
-     <Content>
-       <List>{cookieList}</List>
-     </Content>
-   );
+   return <VStack space="5">{cookieList}</VStack>;
    ```
 
 5. In `CookieItem`, let's render the name and the image of the `cookie`. Pass `cookie` as a `prop`, import `BakeryItemStyled` and render them.
 
    ```javascript
-   import React from "react";
-   import { BakeryItemStyled } from "../styles";
-   import { ListItem } from "native-base";
-   import { Image } from "react-native";
+   import React from 'react';
+   import { HStack } from 'native-base';
+   import React from 'react';
+   import { Text } from 'react-native';
 
    const CookieItem = ({ cookie }) => {
      return (
-       <ListItem>
+       <HStack w="100%" alignItems="center" space="3">
          <Image
-           style={{ width: "100px", height: "100px" }}
-           source={{ uri: cookie.image }}
+           source={{
+             uri: cookie.image,
+           }}
+           alt="image"
+           style={{ width: 100, height: 100 }}
          />
-         <BakeryItemStyled>{cookie.name}</BakeryItemStyled>
-       </ListItem>
+         <Text>{cookie.name}</Text>
+       </HStack>
      );
    };
 
@@ -56,14 +55,16 @@
        cookies.find(_cookie => (cookie.id === _cookie.id))
      );
 
-     return (
-       <>
-         <BakeryDetailWrapper>
-           [...]
-         </BakeryDetailWrapper>
-         <CookieList cookies={cookiesFromCookieStore} />
-       </>
-     );
+      return (
+    <View style={styles.BakeryDetailWrapper}>
+      <Image
+        style={styles.BakeryDetailImage}
+        source={{ uri: bakery.image }}
+      />
+      <Text style={styles.BakeryDetailTitle}>{bakery.name}</Text>
+      <BakeryList cookies={cookiesFromCookieStore} />
+    </View>
+   );
    };
    ```
 

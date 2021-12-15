@@ -3,77 +3,69 @@ The styling is horrible! We need to fix the styling for our list to show. This s
 1. Install `native-base`.
 
    ```shell
-   $ yarn add native-base
+   $ npm install native-base
    ```
 
-2. In `BakeryList`, import `List` from `native-base`.
+2. Import `NativeBaseProvider` from 'native-base':
+
+```javascript
+import { NativeBaseProvider } from 'native-base';
+```
+
+3. Wrap your main component in `app.js` with `NativeBaseProvider`.
+
+```javascript
+<NativeBaseProvider>
+  <View style={styles.container}>
+    {/* <Home /> */}
+    <BakeryList />
+    <StatusBar style="auto" />
+  </View>
+</NativeBaseProvider>
+```
+
+4. In `BakeryList`, import `VStack` from `native-base`.
 
    ```javascript
-   import { List } from "native-base";
+   import { VStack } from 'native-base';
    ```
 
-3. Wrap `bakeryList` with `List` instead of `View`.
+5. Wrap `bakeryList` with `List` instead of `View`.
 
    ```javascript
-   return <List>{bakeryList}</List>;
+   return <VStack space="5">{bakeryList}</VStack>;
    ```
 
-4. Now to fix it on top and bring it down a bit, add a `Content` component from `native-base`.
+6. Now let's style `BakeryItem`. Import `HStack` from `native-base` and wrap `Text` with it. add the bakery image by importing `Image` from `native-base` Amazing right?!
 
    ```javascript
-   return (
-     <Content>
-       <List>{bakeryList}</List>
-     </Content>
-   );
-   ```
-
-   Much better!
-
-5. Now let's style `BakeryItem`. Import `ListItem` from `native-base` and wrap `Text` with it. Amazing right?!
-
-   ```javascript
-   <ListItem>
+   <HStack w="100%" alignItems="center" space="3">
      <Text>{bakery.name}</Text>
-   </ListItem>
+   </HStack>
    ```
 
-6. Note that you can scroll through it now.
-
-7. Let's style the `Text` a bit. In your `styles.js` file, import `styled` and create a new styled component for `Text`, and use it in `BakeryItem`.
-
-   ```
-   export const BakeryItemStyled = styled.Text`
-     color: ${(props) => props.theme.mainColor};
-     font-size: 18px;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     margin-left: 16px;
-     width: 100%;
-   `;
-   ```
-
-8. Wow! This looks much better!
-
-9. Let's also display the image of each bakery using react native's `Image` component.
+7. Let's also display the image of each shop using native-base's `Image` component.
 
    ```javascript
-   import { Image } from "react-native";
+   import { HStack, Image } from 'native-base';
    const BakeryItem = ({ bakery }) => {
      return (
-       <ListItem>
+       <HStack w="100%" alignItems="center" space="3">
          <Image
-           style={{ width: "100px", height: "100px" }}
-           source={{ uri: bakery.image }}
+           source={{
+             uri: bakery.image,
+           }}
+           alt="image"
+           style={{ width: 100, height: 100 }}
          />
-         <BakeryItemStyled>{bakery.name}</BakeryItemStyled>
-       </ListItem>
+         <Text>{bakery.name}</Text>
+       </HStack>
      );
    };
    ```
 
-10. Another cool component from Native Base is the `Spinner`. Import it in `BakeryList` and render it instead of `Loading...`.
+8. Another cool component from Native Base is the `Spinner`. Import it in `BakeryList` and render it instead of `Loading...`.
 
-    ```javascript
-    if (loading) return <Spinner />;
-    ```
+   ```javascript
+   if (loading) return <Spinner />;
+   ```
